@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+      "wuxia:jade_block",
+      "wuxia:jade_ore",
+      "wuxia:deepslate_jade_ore"
+  ]
+}

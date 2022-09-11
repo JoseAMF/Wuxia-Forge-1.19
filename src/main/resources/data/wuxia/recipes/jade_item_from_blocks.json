@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "wuxia:jade_block"
+    }
+  ],
+  "result": {
+    "item": "wuxia:jade",
+    "count": 9
+  }
+}
