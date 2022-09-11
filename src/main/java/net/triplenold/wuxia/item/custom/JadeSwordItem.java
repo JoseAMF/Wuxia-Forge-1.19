@@ -2,6 +2,7 @@ package net.triplenold.wuxia.item.custom;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +22,7 @@ public class JadeSwordItem extends Item implements IActivatableItem {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
             this.setActive(!this.isActive());
+            player.setForcedPose(Pose.STANDING);
         }
         return super.use(level, player, hand);
     }
@@ -34,4 +36,6 @@ public class JadeSwordItem extends Item implements IActivatableItem {
     public Boolean isActive() {
         return _isActive;
     }
+
+
 }

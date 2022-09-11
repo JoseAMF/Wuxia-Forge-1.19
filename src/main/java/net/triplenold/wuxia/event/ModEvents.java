@@ -1,7 +1,5 @@
 package net.triplenold.wuxia.event;
 
-import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -17,7 +15,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.triplenold.wuxia.WuxiaMod;
 import net.triplenold.wuxia.cultivation.PlayerCultivationProvider;
 import net.triplenold.wuxia.particle.ModParticles;
-import net.triplenold.wuxia.util.ICultivator;
 
 import java.util.Random;
 
@@ -54,11 +51,15 @@ public class ModEvents {
                  Level world = player.getCommandSenderWorld();
                  Random random = new Random();
 
-                 if(playerCultivation.isCultivating()) {
+                 if(playerCultivation.isCultivating() && !(player.isOnGround() || player.isSleeping() ||
+                         player.isFallFlying() || player.isSwimming() || player.isCrouching() || playerCultivation.hasMoved(playerPos))) {
                      if(random.nextFloat() > 0.85f) {
                         ((ServerLevel)player.getLevel()).sendParticles(ModParticles.CULTIVATION_PARTICLES.get(),
-                                         playerPos.x, playerPos.y, playerPos.z, 1, 0, 0.5D, random.nextDouble(0.075d), 0);
+                                         playerPos.x, playerPos.y+0.5, playerPos.z, 1, 0,
+                                random.nextDouble(0.35d), random.nextDouble(0.35d), random.nextDouble(0.35d));
                      }
+                 }         else if(playerCultivation.isCultivating()) {
+                     playerCultivation.setCultivating();
                  }
              });
          }

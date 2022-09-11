@@ -1,5 +1,6 @@
 package net.triplenold.wuxia.mixin;
 
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.triplenold.wuxia.WuxiaMod;
@@ -16,11 +17,10 @@ import java.util.Random;
 public class PlayerMixin {
 
 
-    @Inject(method = "tick", at = @At("TAIL"))
+    @Inject(method = "tick", at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
         Player player = (Player)(Object)this;
-        Random random = new Random();
-        Vec3 playerPos = player.position();
+        player.setForcedPose(Pose.STANDING);
 
     }
 }

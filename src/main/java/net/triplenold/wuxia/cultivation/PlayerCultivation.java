@@ -18,14 +18,14 @@ public class PlayerCultivation {
         qi = Math.max(Math.min(qi + qiAmount, MAX_QI), MIN_QI);
     }
 
-    public void toggleCultivation(Vec3 pos) {
-        if(isCultivating) {
-            isCultivating = false;
-            cultivationPos = null;
-        } else {
-            isCultivating = true;
-            cultivationPos = pos;
-        }
+    public void setCultivating(Vec3 pos) {
+        isCultivating = true;
+        cultivationPos = pos;
+    }
+
+    public void setCultivating() {
+       isCultivating = false;
+       cultivationPos = null;
     }
 
     public Boolean isCultivating() {
@@ -34,8 +34,11 @@ public class PlayerCultivation {
 
 
     public Boolean hasMoved(Vec3 pos) {
-        if(pos.distanceTo(cultivationPos) == 0) return false;
-        return true;
+        try {
+            return cultivationPos.distanceTo(pos) != 0;
+        } catch (Exception e){
+            return true;
+        }
     }
 
     public void copyFrom(PlayerCultivation source) {

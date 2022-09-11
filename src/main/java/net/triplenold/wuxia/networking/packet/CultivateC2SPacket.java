@@ -24,7 +24,7 @@ public class CultivateC2SPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
             ServerPlayer player = context.getSender();
-            player.getCapability(PlayerCultivationProvider.PLAYER_CULTIVATION).ifPresent(playerCultivation -> playerCultivation.toggleCultivation(player.position()));
+            player.getCapability(PlayerCultivationProvider.PLAYER_CULTIVATION).ifPresent(playerCultivation -> playerCultivation.setCultivating(player.position()));
         });
 
         return true;
