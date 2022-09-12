@@ -17,10 +17,10 @@ import java.util.Random;
 public class PlayerMixin {
 
 
-    @Inject(method = "tick", at = @At("HEAD"))
-    private void tick(CallbackInfo ci) {
-        Player player = (Player)(Object)this;
-        player.setForcedPose(Pose.STANDING);
-
-    }
+//    @Inject(method = "tick", at = @At("HEAD"))
+//    private void tick(CallbackInfo ci) {
+//        Player player = (Player)(Object)this;
+//        player.setForcedPose(Pose.STANDING);
+//
+//    }
 }

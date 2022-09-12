@@ -2,6 +2,7 @@ package net.triplenold.wuxia.event;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -13,7 +14,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import net.triplenold.wuxia.WuxiaMod;
+import net.triplenold.wuxia.cultivation.PlayerCultivation;
 import net.triplenold.wuxia.cultivation.PlayerCultivationProvider;
+import net.triplenold.wuxia.networking.ModNetworking;
+import net.triplenold.wuxia.networking.packet.CultivationSyncS2CPacket;
 import net.triplenold.wuxia.particle.ModParticles;
 
 import java.util.Random;
@@ -43,25 +47,11 @@ public class ModEvents {
 
      @SubscribeEvent
      public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-
          if(event.side == LogicalSide.SERVER) {
              event.player.getCapability(PlayerCultivationProvider.PLAYER_CULTIVATION).ifPresent(playerCultivation -> {
-                 Player player = event.player;
-                 Vec3 playerPos = player.position();
-                 Level world = player.getCommandSenderWorld();
-                 Random random = new Random();
-
-                 if(playerCultivation.isCultivating() && !(player.isOnGround() || player.isSleeping() ||
-                         player.isFallFlying() || player.isSwimming() || player.isCrouching() || playerCultivation.hasMoved(playerPos))) {
-                     if(random.nextFloat() > 0.85f) {
-                        ((ServerLevel)player.getLevel()).sendParticles(ModParticles.CULTIVATION_PARTICLES.get(),
-                                         playerPos.x, playerPos.y+0.5, playerPos.z, 1, 0,
-                                random.nextDouble(0.35d), random.nextDouble(0.35d), random.nextDouble(0.35d));
-                     }
-                 }         else if(playerCultivation.isCultivating()) {
-                     playerCultivation.setCultivating();
-                 }
+                 PlayerCultivation.handlePlayerTick(event, playerCultivation);
+                 ModNetworking.sendToPlayer(new CultivationSyncS2CPacket(playerCultivation.getQi(), playerCultivation.isCultivating()), ((ServerPlayer) event.player));
              });
-         }
+        }
      }
 }

@@ -8,6 +8,8 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.triplenold.wuxia.WuxiaMod;
 import net.triplenold.wuxia.networking.packet.CultivateC2SPacket;
+import net.triplenold.wuxia.networking.packet.CultivationSyncS2CPacket;
+import net.triplenold.wuxia.networking.packet.SetPlayerFlightC2SPacket;
 
 public class ModNetworking {
     private static SimpleChannel INSTANCE;
@@ -30,6 +32,18 @@ public class ModNetworking {
                 .decoder(CultivateC2SPacket::new)
                 .encoder(CultivateC2SPacket::toBytes)
                 .consumerMainThread(CultivateC2SPacket::handle)
+                .add();
+
+        net.messageBuilder(SetPlayerFlightC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(SetPlayerFlightC2SPacket::new)
+                .encoder(SetPlayerFlightC2SPacket::toBytes)
+                .consumerMainThread(SetPlayerFlightC2SPacket::handle)
+                .add();
+
+        net.messageBuilder(CultivationSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(CultivationSyncS2CPacket::new)
+                .encoder(CultivationSyncS2CPacket::toBytes)
+                .consumerMainThread(CultivationSyncS2CPacket::handle)
                 .add();
     }
 

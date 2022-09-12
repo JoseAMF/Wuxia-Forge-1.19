@@ -27,23 +27,9 @@ public class PlayerJadeSwordLayer <T extends Player> extends RenderLayer<T, Play
         if(!player.isInvisible() && isSwordActive(player)) {
             final float scale = 2F;
             poseStack.pushPose();
-            this.getParentModel().leftArm.xRot = 0;
-            this.getParentModel().rightArm.xRot = 0;
-            this.getParentModel().leftLeg.xRot = 0;
-            this.getParentModel().rightLeg.xRot = 0;
-
-            this.getParentModel().leftArm.zRot = 0;
-            this.getParentModel().rightArm.zRot = 0;
-            this.getParentModel().leftLeg.zRot = 0;
-            this.getParentModel().rightLeg.zRot = 0;
-
-            this.getParentModel().leftArm.yRot = 0;
-            this.getParentModel().rightArm.yRot = 0;
-            this.getParentModel().leftLeg.yRot = 0;
-            this.getParentModel().rightLeg.yRot = 0;
 
             this.getParentModel().body.translateAndRotate(poseStack);
-            poseStack.translate(0.5D * scale, 1.5, -0.5D * scale);
+            poseStack.translate(0.46875D * scale, 1.53125, -0.5D * scale);
             poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F));
             poseStack.scale(scale, -scale, -scale);
             // render fire here

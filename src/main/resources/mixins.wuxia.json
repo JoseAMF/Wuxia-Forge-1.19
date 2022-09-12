@@ -7,7 +7,7 @@
   "mixins": [
     "PlayerRendererMixin",
     "PlayerMixin",
-    "BipedEntityModelMixin"
+    "HumanoidModelMixin"
    ],
   "client": [
   ]

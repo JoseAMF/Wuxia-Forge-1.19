@@ -5,6 +5,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.triplenold.wuxia.client.CultivationPlayerData;
 import net.triplenold.wuxia.cultivation.PlayerCultivationProvider;
 import net.triplenold.wuxia.item.custom.JadeSwordItem;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(HumanoidModel.class)
-public abstract class BipedEntityModelMixin <T extends LivingEntity> {
+public abstract class HumanoidModelMixin<T extends LivingEntity> {
 
     @Shadow
     public ModelPart rightArm;
@@ -42,6 +43,16 @@ public abstract class BipedEntityModelMixin <T extends LivingEntity> {
                     rightArm.yRot   = 0;
                     leftLeg.yRot    = 0;
                     rightLeg.yRot   = 0;
+                } else if(CultivationPlayerData.getIsCulltivating()) {
+                    this.rightArm.xRot += (-(float)Math.PI / 5F);
+                    this.leftArm.xRot += (-(float)Math.PI / 5F);
+                    this.rightLeg.xRot = -1.4137167F;
+                    this.rightLeg.yRot = ((float)Math.PI / 10F);
+                    this.rightLeg.zRot = 0.07853982F;
+                    this.leftLeg.xRot = -1.4137167F;
+                    this.leftLeg.yRot = (-(float)Math.PI / 10F);
+                    this.leftLeg.zRot = -0.07853982F;
+
                 }
             });
         }
