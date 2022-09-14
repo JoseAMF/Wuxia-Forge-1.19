@@ -28,6 +28,7 @@ public class PlayerJadeSwordLayer <T extends Player> extends RenderLayer<T, Play
             final float scale = 2F;
             poseStack.pushPose();
 
+
             this.getParentModel().body.translateAndRotate(poseStack);
             poseStack.translate(0.46875D * scale, 1.53125, -0.5D * scale);
             poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F));

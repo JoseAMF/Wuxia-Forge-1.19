@@ -26,7 +26,7 @@ public class SetPlayerFlightC2SPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
             ServerPlayer player = context.getSender();
-
+            if(player.isCreative()) return;
             player.getAbilities().mayfly = value;
             player.getAbilities().flying = value;
 
