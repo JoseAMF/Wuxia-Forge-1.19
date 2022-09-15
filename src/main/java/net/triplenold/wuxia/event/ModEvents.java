@@ -1,5 +1,7 @@
 package net.triplenold.wuxia.event;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -13,7 +15,9 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.triplenold.wuxia.WuxiaMod;
+import net.triplenold.wuxia.block.ModBlocks;
 import net.triplenold.wuxia.cultivation.PlayerCultivation;
 import net.triplenold.wuxia.cultivation.PlayerCultivationProvider;
 import net.triplenold.wuxia.networking.ModNetworking;
@@ -53,5 +57,10 @@ public class ModEvents {
                  ModNetworking.sendToPlayer(new CultivationSyncS2CPacket(playerCultivation.getQi(), playerCultivation.isCultivating()), ((ServerPlayer) event.player));
              });
         }
+     }
+
+     @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSELLE_CROP.get(), RenderType.cutout());
      }
 }

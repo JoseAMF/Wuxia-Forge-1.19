@@ -1,12 +1,15 @@
 package net.triplenold.wuxia.item;
 
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.triplenold.wuxia.WuxiaMod;
+import net.triplenold.wuxia.block.ModBlocks;
 import net.triplenold.wuxia.item.custom.JadeSwordItem;
 
 public class ModItems {
@@ -18,6 +21,13 @@ public class ModItems {
 
     public static final RegistryObject<Item> JADE_SWORD = ITEMS.register("jade_sword",
             () -> new JadeSwordItem(new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> ROSELLE_SEEDS = ITEMS.register("roselle_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.ROSELLE_CROP.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB)));
+
+    public static final RegistryObject<Item> ROSELLE = ITEMS.register("roselle",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB).food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

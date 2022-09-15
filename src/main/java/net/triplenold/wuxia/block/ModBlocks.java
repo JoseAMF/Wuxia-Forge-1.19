@@ -15,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.triplenold.wuxia.WuxiaMod;
 import net.triplenold.wuxia.block.custom.JadeSwordBlock;
+import net.triplenold.wuxia.block.custom.RoselleCropBlock;
 import net.triplenold.wuxia.item.ModCreativeModeTab;
 import net.triplenold.wuxia.item.ModItems;
 
@@ -34,6 +35,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_JADE_ORE = registerBlock("deepslate_jade_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
                     .requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.WUXIA_TAB);
+
+    public static final RegistryObject<Block> ROSELLE_CROP = BLOCKS.register("roselle_crop",
+            () -> new RoselleCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     public static final RegistryObject<Block> JADE_SWORD_BLOCK = registerBlock("jade_sword_block",
             () -> new JadeSwordBlock(
