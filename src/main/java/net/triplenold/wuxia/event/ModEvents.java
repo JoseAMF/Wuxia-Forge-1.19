@@ -51,10 +51,10 @@ public class ModEvents {
 
      @SubscribeEvent
      public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-         if(event.side == LogicalSide.SERVER) {
+         if(event.side == LogicalSide.SERVER && event.phase == TickEvent.Phase.START && event.player.isAlive()) {
              event.player.getCapability(PlayerCultivationProvider.PLAYER_CULTIVATION).ifPresent(playerCultivation -> {
                  PlayerCultivation.handlePlayerTick(event, playerCultivation);
-                 ModNetworking.sendToPlayer(new CultivationSyncS2CPacket(playerCultivation.getQi(), playerCultivation.isCultivating()), ((ServerPlayer) event.player));
+                 ModNetworking.sendToPlayer(new CultivationSyncS2CPacket(playerCultivation.getQi(), playerCultivation.isCultivating(), playerCultivation.getCultivationTier()), ((ServerPlayer) event.player));
              });
         }
      }

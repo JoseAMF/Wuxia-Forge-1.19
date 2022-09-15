@@ -43,12 +43,12 @@ public class JadeSwordItem extends Item implements IActivatableItem {
                 player instanceof LivingEntity livingEntity && livingEntity.tickCount % 20 == 0) {
             player.getCapability(PlayerCultivationProvider.PLAYER_CULTIVATION).ifPresent(playerCultivation -> {
                 if (isActive()) {
-                    if (playerCultivation.getQi() == 0) {
+                    if (playerCultivation.getQi() < 3) {
                         setActive(false);
                         return;
                     }
 
-                    playerCultivation.addQi(-1);
+                    playerCultivation.addQi(-3);
 
                 }
             });
