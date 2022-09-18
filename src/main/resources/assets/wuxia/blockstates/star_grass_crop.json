@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "age=0": {"model": "wuxia:block/star_grass_stage0"},
+    "age=1": {"model": "wuxia:block/star_grass_stage1"},
+    "age=2": {"model": "wuxia:block/star_grass_stage2"},
+    "age=3": {"model": "wuxia:block/star_grass_stage3"},
+  }
+}

@@ -1,6 +1,7 @@
 package net.triplenold.wuxia.event;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
@@ -46,6 +47,14 @@ public class ClientEvents {
             if (event.getSkin("slim") instanceof PlayerRenderer playerRenderer) {
                 playerRenderer.addLayer(new PlayerJadeSwordLayer<>(playerRenderer));
             }
+
+
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(ModEntityTypes.TEST_MISSILE_PROJECTILE.get(),
+                    ThrownItemRenderer::new);
         }
 
     }
