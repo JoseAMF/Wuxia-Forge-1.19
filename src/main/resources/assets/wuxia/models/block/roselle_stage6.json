@@ -2,5 +2,6 @@
   "parent": "minecraft:block/crop",
   "textures": {
     "crop": "wuxia:block/roselle_stage6"
-  }
+  },
+  "render_type": "cutout"
 }
