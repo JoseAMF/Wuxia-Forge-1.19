@@ -8,16 +8,16 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.triplenold.wuxia.item.ModItems;
 
-public class RoselleCropBlock extends CropBlock {
+public class SpiritualGrassCropBlock extends CropBlock {
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 6);
 
-    public RoselleCropBlock(Properties properties) {
+    public SpiritualGrassCropBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return ModItems.ROSELLE_SEEDS.get();
+        return ModItems.SPIRITUAL_GRASS_SEEDS.get();
     }
 
     @Override

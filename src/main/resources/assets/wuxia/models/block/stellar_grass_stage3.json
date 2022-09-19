@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "wuxia:block/roselle_stage1"
+    "crop": "wuxia:block/stellar_grass_stage3"
   },
   "render_type": "cutout"
 }

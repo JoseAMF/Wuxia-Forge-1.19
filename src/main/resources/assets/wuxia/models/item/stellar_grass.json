@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "wuxia:item/roselle"
+    "layer0": "wuxia:item/stellar_grass"
   }
 }

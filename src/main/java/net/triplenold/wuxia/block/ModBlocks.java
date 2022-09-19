@@ -15,7 +15,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.triplenold.wuxia.WuxiaMod;
 import net.triplenold.wuxia.block.custom.JadeSwordBlock;
-import net.triplenold.wuxia.block.custom.RoselleCropBlock;
+import net.triplenold.wuxia.block.custom.SnowyGrassCropBlock;
+import net.triplenold.wuxia.block.custom.SpiritualGrassCropBlock;
+import net.triplenold.wuxia.block.custom.StellarGrassCropBlock;
 import net.triplenold.wuxia.item.ModCreativeModeTab;
 import net.triplenold.wuxia.item.ModItems;
 
@@ -36,8 +38,14 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
                     .requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.WUXIA_TAB);
 
-    public static final RegistryObject<Block> ROSELLE_CROP = BLOCKS.register("roselle_crop",
-            () -> new RoselleCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> STELLAR_GRASS_CROP = BLOCKS.register("stellar_grass_crop",
+            () -> new StellarGrassCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+    public static final RegistryObject<Block> SNOWY_GRASS_CROP = BLOCKS.register("snowy_grass_crop",
+            () -> new SnowyGrassCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+    public static final RegistryObject<Block> SPIRITUAL_GRASS_CROP = BLOCKS.register("spiritual_grass_crop",
+            () -> new SpiritualGrassCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     public static final RegistryObject<Block> JADE_SWORD_BLOCK = registerBlock("jade_sword_block",
             () -> new JadeSwordBlock(

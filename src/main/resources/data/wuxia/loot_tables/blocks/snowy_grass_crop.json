@@ -13,17 +13,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "wuxia:roselle_crop",
+                  "block": "wuxia:snowy_grass_crop",
                   "properties": {
                     "age": "6"
                   }
                 }
               ],
-              "name": "wuxia:roselle"
+              "name": "wuxia:snowy_grass"
             },
             {
               "type": "minecraft:item",
-              "name": "wuxia:roselle_seeds"
+              "name": "wuxia:snowy_grass_seeds"
             }
           ]
         }
@@ -46,13 +46,13 @@
               }
             }
           ],
-          "name": "wuxia:roselle_seeds"
+          "name": "wuxia:snowy_grass_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "wuxia:roselle_crop",
+          "block": "wuxia:snowy_grass_crop",
           "properties": {
             "age": "6"
           }

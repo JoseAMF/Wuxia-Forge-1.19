@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "age=0": {"model": "wuxia:block/snowy_grass_stage0"},
+    "age=1": {"model": "wuxia:block/snowy_grass_stage1"},
+    "age=2": {"model": "wuxia:block/snowy_grass_stage2"},
+    "age=3": {"model": "wuxia:block/snowy_grass_stage3"},
+    "age=4": {"model": "wuxia:block/snowy_grass_stage4"},
+    "age=5": {"model": "wuxia:block/snowy_grass_stage5"},
+    "age=6": {"model": "wuxia:block/snowy_grass_stage6"}
+  }
+}

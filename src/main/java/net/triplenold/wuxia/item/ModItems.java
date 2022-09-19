@@ -22,11 +22,25 @@ public class ModItems {
     public static final RegistryObject<Item> JADE_SWORD = ITEMS.register("jade_sword",
             () -> new JadeSwordItem(new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB).stacksTo(1)));
 
-    public static final RegistryObject<Item> ROSELLE_SEEDS = ITEMS.register("roselle_seeds",
-            () -> new ItemNameBlockItem(ModBlocks.ROSELLE_CROP.get(),
+    public static final RegistryObject<Item> STELLAR_GRASS_SEEDS = ITEMS.register("stellar_grass_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.STELLAR_GRASS_CROP.get(),
                     new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB)));
 
-    public static final RegistryObject<Item> ROSELLE = ITEMS.register("roselle",
+    public static final RegistryObject<Item> STELLAR_GRASS = ITEMS.register("stellar_grass",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB).food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
+
+    public static final RegistryObject<Item> SNOWY_GRASS_SEEDS = ITEMS.register("snowy_grass_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.SNOWY_GRASS_CROP.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB)));
+
+    public static final RegistryObject<Item> SNOWY_GRASS = ITEMS.register("snowy_grass",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB).food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
+
+    public static final RegistryObject<Item> SPIRITUAL_GRASS_SEEDS = ITEMS.register("spiritual_grass_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.SPIRITUAL_GRASS_CROP.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB)));
+
+    public static final RegistryObject<Item> SPIRITUAL_GRASS = ITEMS.register("spiritual_grass",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB).food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
 
     public static void register(IEventBus eventBus) {
