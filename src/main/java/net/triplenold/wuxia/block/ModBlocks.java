@@ -15,7 +15,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.triplenold.wuxia.WuxiaMod;
 import net.triplenold.wuxia.block.custom.JadeSwordBlock;
-import net.triplenold.wuxia.block.custom.RoselleCropBlock;
 import net.triplenold.wuxia.block.custom.SnowyGrassCropBlock;
 import net.triplenold.wuxia.block.custom.SpiritualGrassCropBlock;
 import net.triplenold.wuxia.block.custom.StarGrassCropBlock;

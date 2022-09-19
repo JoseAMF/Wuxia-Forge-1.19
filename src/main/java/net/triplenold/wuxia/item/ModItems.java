@@ -42,13 +42,6 @@ public class ModItems {
                     new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB)));
 
     //Crops
-    public static final RegistryObject<Item> ROSELLE_SEEDS = ITEMS.register("roselle_seeds",
-            () -> new ItemNameBlockItem(ModBlocks.ROSELLE_CROP.get(),
-                    new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB)));
-
-    public static final RegistryObject<Item> ROSELLE = ITEMS.register("roselle",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB).food(new FoodProperties.Builder()
-                    .nutrition(2).saturationMod(2f).build())));
     public static final RegistryObject<Item> STAR_GRASS_SEEDS = ITEMS.register("star_grass_seeds",
             () -> new ItemNameBlockItem(ModBlocks.STAR_GRASS_CROP.get(),
                     new Item.Properties().tab(ModCreativeModeTab.WUXIA_TAB)));
