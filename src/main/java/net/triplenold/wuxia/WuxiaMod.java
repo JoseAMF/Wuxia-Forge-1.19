@@ -55,8 +55,14 @@ public class WuxiaMod
 
     @SuppressWarnings("removal")
     private void clientSetup(final FMLClientSetupEvent event) {
+        //BLOCKS
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.JADE_SWORD_BLOCK.get(), RenderType.cutout());
 
+        //CROPS
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSELLE_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.STAR_GRASS_CROP.get(), RenderType.cutout());
+
+        //ENTITIES
         EntityRenderers.register(ModEntityTypes.JADE_SWORD.get(), JadeSwordRenderer::new);
 
     }

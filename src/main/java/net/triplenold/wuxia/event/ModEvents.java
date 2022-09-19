@@ -59,4 +59,8 @@ public class ModEvents {
         }
      }
 
+     @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSELLE_CROP.get(), RenderType.cutout());
+     }
 }

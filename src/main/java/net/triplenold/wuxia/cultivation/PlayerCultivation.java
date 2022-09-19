@@ -1,5 +1,6 @@
 package net.triplenold.wuxia.cultivation;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -96,8 +97,7 @@ public class PlayerCultivation {
         Random random = new Random();
 
         if((player.tickCount % 20) == 0) {
-            playerCultivation.addQi(1);
-            WuxiaMod.LOGGER.debug("this should be per second");
+            playerCultivation.addQi(getQiGatherEfficiency(player, playerCultivation));
         }
 
         if(playerCultivation.isCultivating() && !(!player.isOnGround() || player.isSleeping() ||
@@ -122,5 +122,19 @@ public class PlayerCultivation {
             playerCultivation.setCultivating();
         }
 
+    }
+
+    private static int getQiGatherEfficiency(Player player, PlayerCultivation playerCultivation) {
+        int qi = playerCultivation.cultivationTier.getQiPerTick();
+
+//        if(player.hasEffect(ModCustomEffects.QI_EFFICIENCY_EFFECT)){
+//            qi += 0.5;
+//        }
+//
+//         if(player.getLevel().getBiome(new BlockPos(player.position())) == ModBiomes.QiBiome) {
+//             qi +=0.5;
+//         }
+
+            return qi;
     }
 }
