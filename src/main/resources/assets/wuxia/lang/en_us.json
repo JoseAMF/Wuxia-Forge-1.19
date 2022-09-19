@@ -1,12 +1,16 @@
 {
   "item.wuxia.jade":  "Jade",
-  "item.wuxia.jade_sword":  "Jade Sword",
   "item.wuxia.roselle": "Roselle",
   "item.wuxia.roselle_seeds": "Roselle Seeds",
   "item.wuxia.roselle": "Star Grass",
   "item.wuxia.roselle_seeds": "Star Grass Seeds",
 
-  "block.wuxia.orichalcum_block": "Orichalcum Block",
+  "item.wuxia.jade_sword":  "Jade Sword",
+  "item.wuxia.jade_shovel":  "Jade Shovel",
+  "item.wuxia.jade_axe":  "Jade Axe",
+  "item.wuxia.jade_pickaxe":  "Jade Pickaxe",
+  "item.wuxia.jade_hoe":  "Jade Hoe",
+
   "block.wuxia.jade_ore":  "Jade Ore",
   "block.wuxia.deepslate_jade_ore":  "Deepslate Jade Ore",
   "block.wuxia.jade_block":  "Jade Block",

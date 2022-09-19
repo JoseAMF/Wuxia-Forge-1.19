@@ -13,7 +13,7 @@ public class JadeSwordModel extends AnimatedGeoModel<JadeSwordEntity> {
 
     @Override
     public ResourceLocation getTextureResource(JadeSwordEntity object) {
-        return new ResourceLocation(WuxiaMod.MOD_ID, "textures/entity/jade_sword/jade_sword.png");
+        return new ResourceLocation(WuxiaMod.MOD_ID, "textures/entity/jade_sword/flying_jade_sword.png");
     }
 
     @Override

@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "wuxia:item/jade_sword"
+    "layer0": "wuxia:item/jade_hoe"
   }
 }

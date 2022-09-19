@@ -16,7 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.triplenold.wuxia.WuxiaMod;
 import net.triplenold.wuxia.block.custom.JadeSwordBlock;
 import net.triplenold.wuxia.block.custom.RoselleCropBlock;
-import net.triplenold.wuxia.block.custom.StartGrassCropBlock;
+import net.triplenold.wuxia.block.custom.StarGrassCropBlock;
 import net.triplenold.wuxia.item.ModCreativeModeTab;
 import net.triplenold.wuxia.item.ModItems;
 
@@ -50,7 +50,7 @@ public class ModBlocks {
             () -> new RoselleCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     public static final RegistryObject<Block> STAR_GRASS_CROP = BLOCKS.register("star_grass_crop",
-            () -> new StartGrassCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+            () -> new StarGrassCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> registry = BLOCKS.register(name, block);
