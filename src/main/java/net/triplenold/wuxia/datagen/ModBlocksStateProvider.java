@@ -30,7 +30,6 @@ public class ModBlocksStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         simpleBlock(ModBlocks.JADE_BLOCK.get());
-        simpleBlock(ModBlocks.JADE_SWORD_BLOCK.get());
         simpleBlock(ModBlocks.JADE_ORE.get());
         simpleBlock(ModBlocks.DEEPSLATE_JADE_ORE.get());
 

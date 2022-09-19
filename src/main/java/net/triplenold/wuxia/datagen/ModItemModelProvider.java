@@ -24,6 +24,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ROSELLE_SEEDS.get());
         simpleItem(ModItems.STAR_GRASS.get());
         simpleItem(ModItems.STAR_GRASS_SEEDS.get());
+        simpleItem(ModItems.FLYING_JADE_SWORD.get());
 
 
         simpleBlock(ModBlocks.JADE_BLOCK.get());
@@ -61,7 +62,13 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder simpleBlock(Block block) {
-        return cubeAll(block.toString(), new ResourceLocation(WuxiaMod.MOD_ID,
-                "item/" + block.toString()));
+        return cubeAll(normalizeBlockPath(block), new ResourceLocation(WuxiaMod.MOD_ID,
+                "block/" + normalizeBlockPath(block)));
+    }
+
+
+    private String normalizeBlockPath(Block block) {
+        return block.toString().replace("Block{", "").replace("}", "")
+                .replace(WuxiaMod.MOD_ID+ ":", "");
     }
 }
