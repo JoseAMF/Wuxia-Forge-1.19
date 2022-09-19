@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "wuxia:block/star_grass_stage3"
-  }
-}
