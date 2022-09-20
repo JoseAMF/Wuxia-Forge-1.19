@@ -5,6 +5,7 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -27,7 +28,9 @@ public class ModBlockLootTablesProvider extends BlockLoot {
         this.dropSelf(ModBlocks.JADE_SWORD_BLOCK.get());
         this.dropSelf(ModBlocks.GINGER_PLANT.get());
 
-        this.add(ModBlocks.POTTED_GINGER_PLANT.get(), BlockLoot::createPotFlowerItemTable);
+//        this.add((FlowerPotBlock)ModBlocks.POTTED_GINGER_PLANT.get(), BlockLoot::createPotFlowerItemTable);
+
+        dropPottedContents(ModBlocks.POTTED_GINGER_PLANT.get());
 
         this.add(ModBlocks.JADE_ORE.get(),
                 (block -> createJadeOreDrops(block)));
@@ -64,6 +67,12 @@ public class ModBlockLootTablesProvider extends BlockLoot {
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+    }
+
+    public void dropPottedContents(Block block) {
+        this.add(block, (p_236251_) -> {
+            return createPotFlowerItemTable(((FlowerPotBlock)p_236251_).getContent());
+        });
     }
 
 }
