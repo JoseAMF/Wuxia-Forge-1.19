@@ -41,6 +41,30 @@ public class ModBlocks {
             () -> new FlowerPotBlock(null, ModBlocks.GINGER_PLANT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
+    public static final RegistryObject<Block> GINSENG_PLANT = registerBlock("ginseng_plant",
+            () -> new FlowerBlock(MobEffects.LEVITATION, 8,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), ModCreativeModeTab.WUXIA_TAB);
+
+    public static final RegistryObject<Block> POTTED_GINSENG_PLANT = BLOCKS.register("potted_ginseng_plant",
+            () -> new FlowerPotBlock(null, ModBlocks.GINSENG_PLANT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
+    public static final RegistryObject<Block> RUBRIC_DEW_PLANT = registerBlock("rubric_dew_plant",
+            () -> new FlowerBlock(MobEffects.LEVITATION, 8,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), ModCreativeModeTab.WUXIA_TAB);
+
+    public static final RegistryObject<Block> POTTED_RUBRIC_DEW_PLANT = BLOCKS.register("potted_rubric_dew_plant",
+            () -> new FlowerPotBlock(null, ModBlocks.RUBRIC_DEW_PLANT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
+    public static final RegistryObject<Block> SPIRITUAL_DEW_PLANT = registerBlock("spiritual_dew_plant",
+            () -> new FlowerBlock(MobEffects.LEVITATION, 8,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), ModCreativeModeTab.WUXIA_TAB);
+
+    public static final RegistryObject<Block> POTTED_SPIRITUAL_DEW_PLANT = BLOCKS.register("potted_spiritual_dew_plant",
+            () -> new FlowerPotBlock(null, ModBlocks.SPIRITUAL_DEW_PLANT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
     private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }

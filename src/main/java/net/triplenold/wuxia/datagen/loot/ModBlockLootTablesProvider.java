@@ -27,10 +27,16 @@ public class ModBlockLootTablesProvider extends BlockLoot {
         this.dropSelf(ModBlocks.JADE_BLOCK.get());
         this.dropSelf(ModBlocks.JADE_SWORD_BLOCK.get());
         this.dropSelf(ModBlocks.GINGER_PLANT.get());
+        this.dropSelf(ModBlocks.GINSENG_PLANT.get());
+        this.dropSelf(ModBlocks.RUBRIC_DEW_PLANT.get());
+        this.dropSelf(ModBlocks.SPIRITUAL_DEW_PLANT.get());
 
 //        this.add((FlowerPotBlock)ModBlocks.POTTED_GINGER_PLANT.get(), BlockLoot::createPotFlowerItemTable);
 
         dropPottedContents(ModBlocks.POTTED_GINGER_PLANT.get());
+        dropPottedContents(ModBlocks.POTTED_GINSENG_PLANT.get());
+        dropPottedContents(ModBlocks.POTTED_RUBRIC_DEW_PLANT.get());
+        dropPottedContents(ModBlocks.POTTED_SPIRITUAL_DEW_PLANT.get());
 
         this.add(ModBlocks.JADE_ORE.get(),
                 (block -> createJadeOreDrops(block)));

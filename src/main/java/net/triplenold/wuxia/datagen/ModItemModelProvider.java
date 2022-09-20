@@ -34,6 +34,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlock(ModBlocks.JADE_SWORD_BLOCK.get());
 
         simplePlant(ModBlocks.GINGER_PLANT.get());
+        simplePlant(ModBlocks.GINSENG_PLANT.get());
+        simplePlant(ModBlocks.RUBRIC_DEW_PLANT.get());
+        simplePlant(ModBlocks.SPIRITUAL_DEW_PLANT.get());
 
         handheldItem(ModItems.JADE_AXE.get());
         handheldItem(ModItems.JADE_PICKAXE.get());

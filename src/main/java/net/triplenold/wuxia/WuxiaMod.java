@@ -68,6 +68,12 @@ public class WuxiaMod
         //PLANTS
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GINGER_PLANT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GINGER_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GINSENG_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GINSENG_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.RUBRIC_DEW_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_RUBRIC_DEW_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SPIRITUAL_DEW_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_SPIRITUAL_DEW_PLANT.get(), RenderType.cutout());
 
         //ENTITIES
         EntityRenderers.register(ModEntityTypes.JADE_SWORD.get(), JadeSwordRenderer::new);
@@ -79,6 +85,9 @@ public class WuxiaMod
         event.enqueueWork(() -> {
             ModNetworking.register();
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.GINGER_PLANT.getId(), ModBlocks.POTTED_GINGER_PLANT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.GINSENG_PLANT.getId(), ModBlocks.POTTED_GINSENG_PLANT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.RUBRIC_DEW_PLANT.getId(), ModBlocks.POTTED_RUBRIC_DEW_PLANT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SPIRITUAL_DEW_PLANT.getId(), ModBlocks.POTTED_SPIRITUAL_DEW_PLANT);
         });
     }
 

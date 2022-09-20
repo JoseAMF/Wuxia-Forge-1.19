@@ -21,6 +21,12 @@
   "block.wuxia.spiritual_grass_crop": "Spiritual Grass Crop",
   "block.wuxia.ginger_plant": "Ginger Plant",
   "block.wuxia.potted_ginger_plant": "Potted Ginger Plant",
+  "block.wuxia.ginseng_plant": "Ginseng Plant",
+  "block.wuxia.potted_ginseng_plant": "Potted Ginseng Plant",
+  "block.wuxia.rubric_dew_plant": "Rubric Dew Plant",
+  "block.wuxia.potted_rubric_dew_plant": "Potted Rubric Dew Plant",
+  "block.wuxia.spiritual_dew_plant": "Spiritual Dew Plant",
+  "block.wuxia.potted_spiritual_dew_plant": "Potted Spiritual Dew Plant",
 
 
   "itemGroup.wuxiatab": "Wuxia Tab"

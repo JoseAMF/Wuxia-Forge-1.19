@@ -37,7 +37,15 @@ public class ModBlocksStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.GINGER_PLANT.get(), models().cross(normalizeBlockPath(ModBlocks.GINGER_PLANT.get()),
                 blockTexture(ModBlocks.GINGER_PLANT.get())));
         simpleBlock(ModBlocks.POTTED_GINGER_PLANT.get(), flowerPotCross(normalizeBlockPath(ModBlocks.POTTED_GINGER_PLANT.get())));
-
+        simpleBlock(ModBlocks.GINSENG_PLANT.get(), models().cross(normalizeBlockPath(ModBlocks.GINSENG_PLANT.get()),
+                blockTexture(ModBlocks.GINSENG_PLANT.get())));
+        simpleBlock(ModBlocks.POTTED_GINSENG_PLANT.get(), flowerPotCross(normalizeBlockPath(ModBlocks.POTTED_GINSENG_PLANT.get())));
+        simpleBlock(ModBlocks.RUBRIC_DEW_PLANT.get(), models().cross(normalizeBlockPath(ModBlocks.RUBRIC_DEW_PLANT.get()),
+                blockTexture(ModBlocks.RUBRIC_DEW_PLANT.get())));
+        simpleBlock(ModBlocks.POTTED_RUBRIC_DEW_PLANT.get(), flowerPotCross(normalizeBlockPath(ModBlocks.POTTED_RUBRIC_DEW_PLANT.get())));
+        simpleBlock(ModBlocks.SPIRITUAL_DEW_PLANT.get(), models().cross(normalizeBlockPath(ModBlocks.SPIRITUAL_DEW_PLANT.get()),
+                blockTexture(ModBlocks.SPIRITUAL_DEW_PLANT.get())));
+        simpleBlock(ModBlocks.POTTED_SPIRITUAL_DEW_PLANT.get(), flowerPotCross(normalizeBlockPath(ModBlocks.POTTED_SPIRITUAL_DEW_PLANT.get())));
         makeCrop((SnowyGrassCropBlock)ModBlocks.SNOWY_GRASS_CROP.get(), "snowy_grass_stage", "snowy_grass_stage");
         makeCrop((SpiritualGrassCropBlock)ModBlocks.SPIRITUAL_GRASS_CROP.get(), "spiritual_grass_stage", "spiritual_grass_stage");
         makeCrop((StarGrassCropBlock)ModBlocks.STAR_GRASS_CROP.get(), "star_grass_stage", "star_grass_stage");
