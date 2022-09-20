@@ -14,7 +14,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.triplenold.wuxia.block.ModBlocks;
-import net.triplenold.wuxia.block.custom.RoselleCropBlock;
+import net.triplenold.wuxia.block.custom.SnowyGrassCropBlock;
+import net.triplenold.wuxia.block.custom.SpiritualGrassCropBlock;
 import net.triplenold.wuxia.block.custom.StarGrassCropBlock;
 import net.triplenold.wuxia.item.ModItems;
 
@@ -24,6 +25,9 @@ public class ModBlockLootTablesProvider extends BlockLoot {
     protected void addTables() {
         this.dropSelf(ModBlocks.JADE_BLOCK.get());
         this.dropSelf(ModBlocks.JADE_SWORD_BLOCK.get());
+        this.dropSelf(ModBlocks.GINGER_PLANT.get());
+
+        this.add(ModBlocks.POTTED_GINGER_PLANT.get(), BlockLoot::createPotFlowerItemTable);
 
         this.add(ModBlocks.JADE_ORE.get(),
                 (block -> createJadeOreDrops(block)));
@@ -31,11 +35,18 @@ public class ModBlockLootTablesProvider extends BlockLoot {
                 (block -> createJadeOreDrops(block)));
 
         LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(ModBlocks.ROSELLE_CROP.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RoselleCropBlock.AGE, 6));
+                .hasBlockStateProperties(ModBlocks.SNOWY_GRASS_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SnowyGrassCropBlock.AGE, 6));
 
-        this.add(ModBlocks.ROSELLE_CROP.get(), createCropDrops(ModBlocks.ROSELLE_CROP.get(), ModItems.ROSELLE.get(),
-                ModItems.ROSELLE_SEEDS.get(), lootitemcondition$builder));
+        this.add(ModBlocks.SNOWY_GRASS_CROP.get(), createCropDrops(ModBlocks.SNOWY_GRASS_CROP.get(), ModItems.SNOWY_GRASS.get(),
+                ModItems.SNOWY_GRASS_SEEDS.get(), lootitemcondition$builder));
+
+        lootitemcondition$builder = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.SPIRITUAL_GRASS_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SpiritualGrassCropBlock.AGE, 6));
+
+        this.add(ModBlocks.SPIRITUAL_GRASS_CROP.get(), createCropDrops(ModBlocks.SPIRITUAL_GRASS_CROP.get(), ModItems.SPIRITUAL_GRASS.get(),
+                ModItems.SPIRITUAL_GRASS_SEEDS.get(), lootitemcondition$builder));
 
         lootitemcondition$builder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.STAR_GRASS_CROP.get())

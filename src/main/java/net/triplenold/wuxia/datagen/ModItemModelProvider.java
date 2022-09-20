@@ -20,17 +20,20 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.JADE.get());
-        simpleItem(ModItems.ROSELLE.get());
-        simpleItem(ModItems.ROSELLE_SEEDS.get());
         simpleItem(ModItems.STAR_GRASS.get());
         simpleItem(ModItems.STAR_GRASS_SEEDS.get());
+        simpleItem(ModItems.SNOWY_GRASS.get());
+        simpleItem(ModItems.SNOWY_GRASS_SEEDS.get());
+        simpleItem(ModItems.SPIRITUAL_GRASS.get());
+        simpleItem(ModItems.SPIRITUAL_GRASS_SEEDS.get());
         simpleItem(ModItems.FLYING_JADE_SWORD.get());
-
 
         simpleBlock(ModBlocks.JADE_BLOCK.get());
         simpleBlock(ModBlocks.JADE_ORE.get());
         simpleBlock(ModBlocks.DEEPSLATE_JADE_ORE.get());
         simpleBlock(ModBlocks.JADE_SWORD_BLOCK.get());
+
+        simplePlant(ModBlocks.GINGER_PLANT.get());
 
         handheldItem(ModItems.JADE_AXE.get());
         handheldItem(ModItems.JADE_PICKAXE.get());
@@ -70,5 +73,15 @@ public class ModItemModelProvider extends ItemModelProvider {
     private String normalizeBlockPath(Block block) {
         return block.toString().replace("Block{", "").replace("}", "")
                 .replace(WuxiaMod.MOD_ID+ ":", "");
+    }
+
+    private ItemModelBuilder simplePlant(Block block) {
+        return withExistingParent(normalizeBlockPath(block), new ResourceLocation("block/cross")).texture("cross",
+                new ResourceLocation(WuxiaMod.MOD_ID, "block/"+normalizeBlockPath(block)));
+    }
+
+    private ItemModelBuilder simplePottedPlant(Block block) {
+        return withExistingParent("potted_"+normalizeBlockPath(block), new ResourceLocation("block/flower_pot_cross")).texture("plant",
+                new ResourceLocation(WuxiaMod.MOD_ID, "block/"+normalizeBlockPath(block)));
     }
 }

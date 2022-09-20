@@ -1,12 +1,11 @@
 package net.triplenold.wuxia.block;
 
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,6 +31,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> JADE_BLOCK = registerBlock("jade_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.WUXIA_TAB);
+
+    //FLOWER-BLOCK
+    public static final RegistryObject<Block> GINGER_PLANT = registerBlock("ginger_plant",
+            () -> new FlowerBlock(MobEffects.LEVITATION, 8,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), ModCreativeModeTab.WUXIA_TAB);
+
+    public static final RegistryObject<Block> POTTED_GINGER_PLANT = BLOCKS.register("potted_ginger_plant",
+            () -> new FlowerPotBlock(null, ModBlocks.GINGER_PLANT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
 
     //ORES
     public static final RegistryObject<Block> JADE_ORE = registerBlock("jade_ore",

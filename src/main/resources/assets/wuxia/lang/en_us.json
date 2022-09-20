@@ -1,7 +1,5 @@
 {
   "item.wuxia.jade":  "Jade",
-  "item.wuxia.roselle": "Roselle",
-  "item.wuxia.roselle_seeds": "Roselle Seeds",
   "item.wuxia.star_grass": "Star Grass",
   "item.wuxia.star_grass_seeds": "Star Grass Seeds",
   "item.wuxia.snowy_grass": "Snowy Grass",
@@ -19,9 +17,10 @@
   "block.wuxia.deepslate_jade_ore":  "Deepslate Jade Ore",
   "block.wuxia.jade_block":  "Jade Block",
   "block.wuxia.jade_sword_block":  "Jade Sword Block (Display Only)",
-  "block.wuxia.stellar_grass_crop": "Stellar Grass Crop",
   "block.wuxia.snowy_grass_crop": "Snowy Grass Crop",
   "block.wuxia.spiritual_grass_crop": "Spiritual Grass Crop",
+  "block.wuxia.ginger_plant": "Ginger Plant",
+  "block.wuxia.potted_ginger_plant": "Potted Ginger Plant",
 
 
   "itemGroup.wuxiatab": "Wuxia Tab"

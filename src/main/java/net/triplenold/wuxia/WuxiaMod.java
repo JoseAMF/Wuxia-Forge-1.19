@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -59,17 +61,24 @@ public class WuxiaMod
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.JADE_SWORD_BLOCK.get(), RenderType.cutout());
 
         //CROPS
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSELLE_CROP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.STAR_GRASS_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SNOWY_GRASS_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SPIRITUAL_GRASS_CROP.get(), RenderType.cutout());
+
+        //PLANTS
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GINGER_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GINGER_PLANT.get(), RenderType.cutout());
 
         //ENTITIES
         EntityRenderers.register(ModEntityTypes.JADE_SWORD.get(), JadeSwordRenderer::new);
 
     }
+
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork(() -> {
             ModNetworking.register();
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.GINGER_PLANT.getId(), ModBlocks.POTTED_GINGER_PLANT);
         });
     }
 
